@@ -1,0 +1,48 @@
+<%- include('partials/head') %>
+  </head>
+  <body>
+    <%- include('partials/nav') %>
+    <main class="container mx-auto mt-8 p-8 bg-white rounded-lg shadow-md">
+      <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">Register Your Home on AirBnB</h1>
+      <form action="/host/add-home" method="POST" class="max-w-md mx-auto" >
+        <input
+          type="text"
+          name="House_Name"
+          placeholder="Enter your House Name"
+          class="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required
+        />
+
+        <input
+          type="number"
+          name="price"
+          placeholder="Price per Night"
+          class="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required
+        />
+
+        <input
+          type="text"
+          name="location"
+          placeholder="Enter the Location"
+          class="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required
+        />
+        
+        <div class="flex space-x-2">
+          <label><input type="radio" name="rating" value="⭐">⭐</label>
+          <label><input type="radio" name="rating" value="⭐⭐"> ⭐⭐</label>
+          <label><input type="radio" name="rating" value="⭐⭐⭐"> ⭐⭐⭐ </label>
+          <label><input type="radio" name="rating" value="⭐⭐⭐⭐"> ⭐⭐⭐⭐ </label>
+          <label><input type="radio" name="rating" value="⭐⭐⭐⭐⭐"> ⭐⭐⭐⭐⭐</label>
+        </div>
+
+        <input
+          type="text"
+          name="photo"
+          placeholder="Enter the Photo's URL"
+          class="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required
+        />
+
+        <input type="submit" value="Submit" class="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600 transition duration-300" required  />
+      </form>
+    </main>
+  </body>
+</html>

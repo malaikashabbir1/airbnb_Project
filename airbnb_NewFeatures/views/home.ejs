@@ -1,0 +1,50 @@
+<%- include('partials/head') %>
+</head>
+  <body>
+
+  <%- include('partials/nav') %>
+    <main class="container mx-auto bg-white shadow-lg rounded-lg p-8 mt-10 max-w-xl">
+      <h3 class="text-3xl text-black-500 font-bold text-center mb-6">
+        WELCOME TO AIRBNB
+      </h3>
+      <h3 class="text-3xl text-red-500 font-bold text-center mb-6">
+        Here are our registered homes:
+      </h3>
+      
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <% registeredHomes.forEach(home => { %>
+          <li class="bg-white border rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden"> 
+      <!-- If photo is a URL -->
+        <% if (home.photo) { %>
+          <img src="<%= home.photo %>" alt="Photo" class="w-full h-48 object-cover">
+        <% } %>
+        
+      <div class="p-4">
+        <h3 class="text-xl font-bold text-gray-900 mb-2"><%= home.House_Name %></h3>
+        
+        <div class="space-y-1 text-gray-700">
+          <p><span class="font-bold  text-red-500 ">Rs. <%= home.price %> / night </span></p>
+          <p><span class="font-semibold">Location:</span> <%= home.location %></p>
+          <p><span class="font-semibold"></span> <%= home.rating %></p>
+        </div>
+      </div>
+        </li>
+        <% }) %>
+      </ul>
+
+    </main>
+  </body>
+</html>
+
+
+<!-- <ul class="space-y-4">
+        <% registeredHomes.forEach(home => { %>
+          <li class="bg-gray-100 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <p class="text-lg text-gray-800"><%= home.House_Name %></p>
+            <p class="text-lg text-gray-800"><%= home.price %></p>
+            <p class="text-lg text-gray-800"><%= home.location %></p>
+            <p class="text-lg text-gray-800"><%= home.rating %></p>
+            <p class="text-lg text-gray-800"><%= home.photo %></p>
+          </li>
+        <% }) %>
+      </ul> -->
